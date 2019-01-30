@@ -1,0 +1,80 @@
+.tenant-header{
+    margin:34px 0px 24px;
+    h5{
+        padding-left: 0px;
+        margin-bottom: 0px;
+    }
+    .icons-div{
+        font-size:24px;
+        padding-right: 0px;
+        padding-left: 100px;
+        i{
+            color: #0076CC;
+        }
+        .actions{
+            background-color: white;
+            border: 1px solid gray;
+        }  
+    }
+}
+.progress-div{
+    margin: 0px 0px 30px;
+    padding-left: 3px;
+    width: 450px;
+}
+
+.personal-info{
+    border:3px solid #00AA55;
+    height: 40px;
+    margin-left: 0px;
+    margin-right: 0px;
+    .input-group {
+        height: 37px;
+        .input-group-text{
+            background-color: #00AA55;
+            color:white;
+            border:1px solid #00AA55;
+            border-radius: 3px 0 0 3px;
+        }
+        .registration{
+            margin-bottom:0px;
+            padding-left: 17px;
+            padding-top: 7px;
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .icons-div{
+        padding-left: 71px !important;
+    }
+
+    .progress-div{
+        padding-left: 0px;
+        width: 450px;
+    }
+}
+    
+@media only screen and (max-width: 768px) {
+    .icons-div{
+        padding-left: 90px !important;
+    }
+    .progress-div{
+        padding-left: 0px;
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .tenant-header{
+        margin:20px 0px 0px;
+        .icons-div{
+            padding-left: 0px !important;
+        }
+    }
+    .progress-div{
+        margin-top: 20px;
+        padding-left: 0px;
+        width: 410px;
+    }
+}

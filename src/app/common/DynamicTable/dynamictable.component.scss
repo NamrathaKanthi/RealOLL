@@ -1,0 +1,79 @@
+.main-div{
+  margin-top: 30px;
+}
+.plus-icon{
+    height: 20px;	
+    width: 20px;	
+    color: #0076CC;
+    padding-right: 8px;
+  }
+.emp-title{
+  color: rgba(14,24,28,0.87);
+  font-size: 14px;	
+  font-weight: 500;	
+  line-height: 22px;	
+  text-align: center;
+}
+.theader th{
+  background: rgba(14,24,28,0.12);
+  font-size: 12px;	
+  font-weight: 500;	
+  line-height: 16px;
+  height: 40px;
+  padding: 8px;
+  tr{
+    box-shadow: inset 0 -1px 0 0 rgba(14,24,28,0.12);
+  }
+}
+tbody {
+  border-bottom:1px solid rgba(14, 24, 28, 0.12);
+  tr{
+    padding: 3px;
+  }
+  td{
+    padding-left: 0px;padding-right: 0px;
+  }
+  .text-color{
+    color: #0076CC;
+    border:1px solid #ced4da
+}
+.btn-outline-secondary:hover{
+    color:  #fff!important;
+    background-color: #0076CC !important;
+    border-color: #ced4da !important;
+}
+.delete-record{
+  padding: 22px 6px 0px 0px;
+  cursor: pointer;
+  i{
+    color: rgba(14,24,28,0.12);
+  }
+}
+}
+.pad-leftright{
+  padding: 9px 13px 0 5px;
+  margin:0px;
+}
+.form-control{
+  border-radius: 0px !important;
+  display: table;
+}
+table{
+  width: 97vw;
+}
+
+
+@media only screen and (max-width: 768px) {
+  tbody {
+    .form-group{
+      input{
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+      select{
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+  }
+}

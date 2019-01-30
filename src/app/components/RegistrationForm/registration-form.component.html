@@ -1,0 +1,25 @@
+<button *ngIf="!isValidate && !isDone" type="button" class="btn btn-primary float-right continue-button" (click)="open(content)">Register</button>
+
+<ng-template #content let-modal>
+  <div class="modal-body">
+    <h5>Register</h5>
+    <div class="input-group mb-3">
+      <select class="custom-select" id="inputGroupSelect01" [(ngModel)]="selectedOption">
+        <option selected>Choose...</option>
+        <option *ngFor='let optionValue of values'>{{optionValue.value}}</option>
+      </select>
+    </div>
+    <div *ngFor='let radiobuttons of radioOptions' class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text">
+          <input type="radio" aria-label="Radio button for following text input">
+        </div>
+      </div>
+      <input type="text" class="form-control" aria-label="Text input with radio button">
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn modal-cancel-button" (click)="modal.close('Save click')">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="saveFn()">save</button>
+  </div>
+</ng-template>

@@ -1,0 +1,65 @@
+<div *ngIf="!isDone" class="col-md-12 col-sm-12 col-xs-12 footer">
+  <button *ngIf="!isValidate && !isDone" type="button" class="btn btn-primary float-right continue-button" (click)="continueFn('termsConditions')">Continue</button>
+  <ng-template #content let-modal>
+    <div class="modal-body">
+      <p class="about-you-text f-w-500">About You</p>
+      <p class="f-14">We'll send an email with instructions that will allow you to return to the application.</p>
+      <form [formGroup]="registerForm">
+        <div class="form-group">
+          <label for="formGroupExampleInput">First Name</label>
+          <input type="text" class="form-control" formControlName="firstName" [ngClass]="{'is-invalid':registerForm.get('firstName').invalid && registerForm.get('firstName').dirty ||  registerForm.get('firstName').invalid && shared.isNextClicked}">
+          <div class="error-msg" *ngIf="registerForm.get('firstName').invalid && registerForm.get('firstName').dirty || registerForm.get('firstName').invalid && shared.isNextClicked">
+            *First Name is required
+          </div>
+          <label for="formGroupExampleInput">Last Name</label>
+          <input type="text" class="form-control" formControlName="lastName" [ngClass]="{'is-invalid':registerForm.get('lastName').invalid && registerForm.get('lastName').dirty ||  registerForm.get('lastName').invalid && shared.isNextClicked}">
+          <div class="error-msg" *ngIf="registerForm.get('lastName').invalid && registerForm.get('lastName').dirty || registerForm.get('lastName').invalid && shared.isNextClicked">
+            *Last Name is required
+          </div>
+          <label for="formGroupExampleInput">Email</label>
+          <input type="email" class="form-control" formControlName="Email" [ngClass]="{'is-invalid':registerForm.get('Email').invalid && registerForm.get('Email').dirty ||  registerForm.get('Email').invalid && shared.isNextClicked}">
+          <div class="error-msg" *ngIf="registerForm.get('Email').errors?.required && registerForm.get('Email').dirty || registerForm.get('Email').errors?.required && shared.isNextClicked">
+            *Email is required
+          </div>
+          <div class="error-msg" *ngIf="registerForm.get('Email').errors?.pattern && registerForm.get('Email').dirty || registerForm.get('Email').errors?.pattern && shared.isNextClicked">
+            *A Valid Email is required
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn modal-cancel-button" (click)="modal.close('Save click')">Cancel</button>
+      <button type="button" class="btn btn-primary" (click)="continueFn('registerModal');">Continue</button>
+    </div>
+  </ng-template>
+
+  <div class="row button-footer">
+    <div *ngIf="!isDone && isValidate" class="col-md-3 col-xs-4 col-sm-12 col-lg-2 col-12 save-complete">
+      <button type="button" class="col-sm-12 col-lg-12 col-md-12 btn btn-primary back-button">Save & Complete
+        Later</button>
+    </div>
+    <div *ngIf="isValidate && !isSubmit && !isDone" class="col-md-4 col-sm-12 col-lg-3 offset-md-5 offset-lg-7 col-12 p-l-0 p-r-0">
+      <button type="button" class="col-xs-6 col-sm-6 col-md-6 col-lg-5 btn btn-primary back-button" (click)="backFn()">Back</button>
+      <button type="button" class="col-xs-6 col-sm-6 offset-md-1 col-md-5 col-lg-5 btn btn-primary" (click)="nextFn()">Next</button>
+    </div>
+    <div *ngIf="isSubmit && !isDone" class="col-md-6 col-sm-12 col-lg-4 offset-md-3 offset-lg-6 col-12 p-l-0 p-r-0">
+      <button type="button" class="col-xs-6 col-sm-6 col-md-6 col-lg-6 btn btn-primary back-button">Cancel</button>
+      <button type="button" class="col-xs-6 col-sm-6 offset-md-1 col-md-5 col-lg-5 btn btn-primary" (click)="submitFn();open(payment);">Submit
+        Payment</button>
+    </div>
+  </div>
+
+  <ng-template #payment let-modal>
+    <div class="modal-body" (click)="nextRouteFn();closeModal();">
+      <p class="about-you-text">Payment Processing</p>
+      <p>We are processing your payment. Please do not press back or refresh this page or duplicate charges may occur.</p>
+      <p>
+        <ngb-progressbar showValue="true" type="success" [value]="10" [max]="100"></ngb-progressbar>
+      </p>
+    </div>
+  </ng-template>
+</div>
+
+<div *ngIf="isDone" class="offset-lg-11 offset-md-10 offset-sm-10 offset-xs-10 col-md-2 col-lg-1 col-sm-2 col-xs-2 done-button">
+  <button type="button" class="col-md-12 btn btn-primary">Done</button>
+</div>

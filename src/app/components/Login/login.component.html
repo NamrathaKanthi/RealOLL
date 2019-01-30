@@ -1,0 +1,38 @@
+<button *ngIf="!isValidate && !isDone" type="button" class="btn btn-primary float-right continue-button" (click)="open(content)">Continue</button>
+
+<ng-template #content let-modal>
+  <div class="modal-body">
+    <h5>Login</h5>
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <label for="formGroupExampleInput">User Name</label>
+        <input type="email" class="form-control" formControlName="userName">
+        <label class="password" for="formGroupExampleInput">Password</label>
+        <input type="password" class="form-control" formControlName="password">
+        <p (click)="open(reset);modal.close('Save click')">Reset password</p>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn modal-cancel-button" (click)="modal.close('Save click')">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Continue</button>
+  </div>
+</ng-template>
+
+<ng-template #reset let-modal>
+  <div class="modal-body">
+    <h5>Reset Password</h5>
+    <form [formGroup]="resetForm">
+      <div class="form-group">
+        <label for="formGroupExampleInput">New Password</label>
+        <input type="email" class="form-control" formControlName="newPassword">
+        <label class="password" for="formGroupExampleInput">Confirm Password</label>
+        <input type="password" class="form-control" formControlName="confirmPassword">
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn modal-cancel-button" (click)="modal.close('Save click')">Cancel</button>
+    <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Continue</button>
+  </div>
+</ng-template>

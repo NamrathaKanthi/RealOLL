@@ -1,0 +1,15 @@
+@import "../../.././styles.scss";
+
+.modal-footer{
+    border: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    .modal-cancel-button{
+        @include cancel-button();
+        width:100px;
+    }
+    .btn-primary{
+        border-radius: 50px;
+        width: 100px;
+    }
+}

@@ -1,0 +1,60 @@
+<div class="form-feilds">
+  <form [formGroup]="backgroundInfo">
+    <div class="content">
+      <p class="col-md-12 col-lg-12 col-xs-12 col-sm-12">Have you (or any person you have named on this application)
+        ever been evicted from a tenancy or left
+        owing
+        money. If you answered yes, provide an explanation.</p>
+      <div class="form-group row">
+        <div class="col-lg-1 col-md-2 col-sm-3 col-4 select">
+          <select class="form-control" formControlName="select">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="col-lg-11 col-md-10 col-sm-9 col-8 text-box">
+          <input type="text" class="form-control" formControlName="reason">
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <p class="col-lg-12 col-md-12 col-sm-12 col-xs-12">Do you or any of the members of your household have pending
+        criminal charges, or ever been convicted of,
+        plead
+        guilty or no contest to, any criminal offense(s) or had any criminal offense(s) other than traffic
+        infractions
+        that were disposed of other than by acquittal or a finding of "not guilty"? If you answered yes, provide
+        the
+        year and degree of the offense.</p>
+      <div class="form-group row">
+        <div class="col-lg-1 col-md-2 col-sm-3 col-4 select">
+          <select class="form-control" id="sel1" formControlName="select1">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="col-lg-11 col-md-10 col-sm-9 col-8 text-box">
+          <input type="text" class="form-control" formControlName="reason1">
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <p class="col-lg-12 col-md-12 col-sm-12 col-xs-12">Have you (or any person you have named on this application)
+        ever filed for, or currently involved in a
+        bankruptcy, been foreclosed on, or been a defendant in a civil suit? If you answered yes, describe the
+        action
+        and provide the year.</p>
+      <div class="form-group row">
+        <div class="col-lg-1 col-md-2 col-sm-3 col-4 select">
+          <select class="form-control" id="sel1" formControlName="select2">
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="col-lg-11 col-md-10 col-sm-9 col-8 text-box">
+          <input type="text" class="form-control" formControlName="reason1">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,153 @@
+<div class="form-feilds">
+  <div class="row heading-div">
+    <p class="col-xl-5 col-lg-1 col-md-1 col-6 col-sm-12 heading">Payment</p>
+    <!-- <p class="col-md-3 col-lg-2 col-sm-12 col-xs-2 offset-lg-8 offset-md-8 rounded-box">
+      <span class="p-l-8"><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+      <span class="text p-l-10">Application Fee $60.00</span>
+    </p> -->
+    <div class="col-xl-2 col-lg-3 col-md-4 col-6 offset-xl-5 offset-lg-8 offset-md-7 p-r-25">
+      <p class="rounded-box">
+        <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+        <span class="text">Application Fee $60.00</span>
+      </p>
+    </div>
+  </div>
+  <div class="form-content">
+    <form [formGroup]="paymentInfo" novalidate>
+      <div class="row">
+        <div class="col-md-3 col-sm-2 col-6 col-lg-2">
+          <label>First Name on Card</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-6 col-lg-3">
+          <input type="text" class="form-control" formControlName="firstname">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-2 col-6 col-lg-2">
+          <label>Last Name on Card</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-6 col-lg-3">
+          <input type="text" class="form-control" formControlName="lastname">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-2 col-6 col-lg-2">
+          <label>Credit Card Number</label>
+        </div>
+        <div class="col-md-4 col-sm-2 col-6 col-lg-2">
+          <input type="text" class="form-control" formControlName="creditcardNumber">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-2 col-4 col-lg-2">
+          <label>Expiration Date</label>
+        </div>
+        <div class="col-md-4 col-sm-2 col-4 col-lg-2">
+          <select class="form-control small-selectbox" formControlName="month">
+            <option>January</option>
+            <option>Febuary</option>
+            <option>March</option>
+            <option>April</option>
+            <option>May</option>
+            <option>June</option>
+            <option>July</option>
+            <option>August</option>
+            <option>September</option>
+            <option>October</option>
+            <option>November</option>
+            <option>December</option>
+          </select>
+        </div>
+        <div class="col-md-2 col-sm-1 col-4 col-lg-1">
+          <select class="form-control small-selectbox" formControlName="year">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+          </select>
+        </div>
+      </div>
+      <div class="row">
+        <label class="col-md-3 col-sm-2 col-5 col-lg-2">Card Security Code(CCV)</label>
+        <div class="col-md-4 col-sm-1 col-5 col-lg-1">
+          <div class="form-group calender-width">
+            <div class="input-group">
+              <input type="text" class="form-control" formControlName="ccvcode">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary text-color" (click)="d.toggle()" type="button"><i class="fa fa-info-circle"
+                    aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-2 col-6 col-lg-2">
+          <label>Billing Email</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-6 col-lg-3">
+          <input type="text" class="form-control" formControlName="billingEmail">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-2 col-6 col-lg-2 p-r-0">
+          <label>Billing Address Line 1</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-6 col-lg-3">
+          <input type="text" class="form-control" formControlName="address1">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-2 col-6 col-lg-2 p-r-0">
+          <label>Billing Address Line 2</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-6 col-lg-3">
+          <input type="text" class="form-control" formControlName="address2">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-2 col-6 col-lg-2">
+          <label>City</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-6 col-lg-3">
+          <input type="text" class="form-control" formControlName="city">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-2 col-6 col-lg-2">
+          <label>State/Province</label>
+        </div>
+        <div class="col-md-4 col-sm-2 col-6 col-lg-2">
+          <input type="text" class="form-control" formControlName="State">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-2 col-6 col-lg-2">
+          <label>Zip/Postal Code</label>
+        </div>
+        <div class="col-md-4 col-sm-2 col-6 col-lg-2">
+          <input type="text" class="form-control" formControlName="zip">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-2 col-5 col-lg-2">
+          <label>Birth Date</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-5 col-lg-3">
+          <div class="calender-width">
+            <div class="input-group">
+              <input class="form-control text-color" name="dp" formControlName="birthdate" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary text-color" (click)="d.toggle()" type="button"><i class="fa fa-calendar-o"
+                    aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="col-md-12 col-sm-12 col-12 property-footer">
+  <app-propertywarefooter></app-propertywarefooter>
+</div>

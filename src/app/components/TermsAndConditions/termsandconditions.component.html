@@ -1,0 +1,24 @@
+<form [formGroup]="termsForms">
+  <div class="form-feilds">
+    <div class="row heading-div">
+      <p class="heading f-w-500">Terms and Conditions</p>
+    </div>
+    <div class="row text-div">
+      <p>I, Mike Sullivan authorize and permit THE NEW CITY REALTY to perform background checks and obtain information
+        about me from credit reporting sources, current and previous landlords, personal and professional references,
+        employers, banks, and law enforcement agencies. </p>
+      <p>I also authorize and give permission for all parties listed to disclose any information on requested about me
+        to the rental owner or manager stated above. I further authorize and permit the rental
+        owner or manager to obtain updated information annually and on future occasions for rental renewal
+        consideration and for collection purposes should that be deemed necessary. Thanks to all parties for your
+        cooperation with this matter.</p>
+    </div>
+    <div class="row terms">
+      <input class="form-check-input position-static" type="checkbox" formControlName="agree"><span class="accept">Accept
+        terms and conditions</span>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 property-footer">
+      <app-propertywarefooter></app-propertywarefooter>
+    </div>
+  </div>
+</form>

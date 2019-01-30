@@ -1,0 +1,133 @@
+@import "../../.././styles.scss";
+
+.f-14{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.footer{
+    border: 1px solid #E1E1E2;
+    height:76px;
+    .continue-button{
+        margin-top: 19px;
+        margin-right: 100px;
+        width: 125px;
+        border-radius: 50px;
+        font-size: 14px;
+    }
+    .back-button{
+        @include cancel-button();
+    }
+}
+
+.modal-body{
+    padding-left: 60px;
+    padding-right: 60px;
+    .about-you-text{
+        margin:20px 0px 14px;
+        font-size: 20px;
+    }
+    .form-group{
+        label{
+            font-size: 14px;
+        }
+    }
+}
+
+.modal-footer{
+    border: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    .modal-cancel-button{
+        @include cancel-button();
+        width:100px;
+    }
+    .btn-primary{
+        border-radius: 50px;
+    }
+}
+
+.error-msg{
+    color: #d31612;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+.button-footer{
+    padding-top:20px;
+    margin-left: 0px;
+    margin-right: 0px;
+    .btn-primary{
+        border-radius: 50px;
+    }
+}
+
+.done-button{
+    padding-top:20px;
+    margin-right: 0px;
+    .btn-primary{
+        border-radius: 50px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .footer{
+        .continue-button{
+            margin-right: 20px;
+        }
+    }
+    .button-footer{
+        padding-top:20px;
+        .save-complete{
+            padding-left:0px;
+            padding-right: 0px;
+        }
+    }
+    .done-button{
+        margin-right: 0px;
+    }
+    // .save-complete{
+        // button{
+        //     bottom: 10px;
+        // }
+    // }
+    // .back-button{
+    //     bottom: 5px;
+    // }
+    
+}
+
+@media only screen and (max-width: 768px) {
+    .footer{
+        .continue-button{
+            margin-right: 20px;
+        }
+    }
+    .button-footer{
+        padding-top:20px;
+        .save-complete{
+            padding-left:0px;
+            padding-right: 0px;
+        }
+    }
+    .done-button{
+        margin-right: 0px;
+    }  
+}
+
+@media only screen and (max-width: 425px) {
+    .footer{
+        height: 140px !important;
+    }
+    .secondFooter{
+        height: 65px;
+    }
+    .save-complete{
+        button{
+            bottom: 10px;
+        }
+    }
+    .back-button{
+        bottom: 5px;
+    }
+}

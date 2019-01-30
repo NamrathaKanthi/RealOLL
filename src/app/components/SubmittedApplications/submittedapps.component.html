@@ -1,0 +1,54 @@
+<div class="col-md-12 col-sm-12 col-xs-12 content-div">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <h5>Submitted Applications</h5>
+    </div>
+    <!-- <div class="table-row"> -->
+    <!-- <div class="rows-div row">
+            <div class="Cell col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <p>Address</p>
+            </div>
+            <div class="Cell col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <p class="p-r-20">3 Bed / 1.5 Bath</p>
+            </div>
+        </div> -->
+    <!-- <div class="rows-div row">
+            <div class="Cell col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <p>Total Area</p>
+            </div>
+            <div class="Cell col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <p>1361 Sq Ft</p>
+            </div>
+        </div>
+        <div class="rows-div row">
+            <div class="Cell col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <p>Bedrooms</p>
+            </div>
+            <div class="Cell col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <p>3</p>
+            </div>
+        </div> -->
+    <!-- </div> -->
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Address</th>
+                <th scope="col">Date Submitted</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let x of submittedApps">
+                <td>{{x.address}}</td>
+                <td>{{x.dateSubmitted}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><i class="fa fa-ellipsis-v" aria-hidden="true"></i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

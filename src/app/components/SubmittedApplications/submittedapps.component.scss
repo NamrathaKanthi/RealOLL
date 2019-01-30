@@ -1,0 +1,17 @@
+@mixin tabletr {
+    font-weight:200;
+    font-size: 12px; 
+}
+
+
+.content-div{
+    margin-top: 40px;
+        .table{
+            margin-top: 20px;
+            margin-bottom: 0px;
+            margin-left: 7px;
+            thead,tr,th{
+                font-weight: 400;
+        }
+    }
+}

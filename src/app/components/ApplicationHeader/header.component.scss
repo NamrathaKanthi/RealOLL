@@ -1,0 +1,38 @@
+.header{
+    border-bottom:5px solid  #E69727;;
+    background-color:	#E1E1E2;
+    .card1{
+        margin-left:50px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .card2{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .card3{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .header{
+        border-bottom:5px solid  #E69727;;
+        background-color:	#E1E1E2;
+        .card1{
+            margin-left:39px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 425px) {
+    .header{
+        border-bottom:5px solid  #E69727;;
+        background-color:	#E1E1E2;
+        .card1{
+            margin-left:0px;
+        }
+    }
+}

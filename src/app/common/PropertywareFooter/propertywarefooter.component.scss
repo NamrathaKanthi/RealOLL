@@ -1,0 +1,103 @@
+.footer-div{
+    background-color: #37474F;
+    color: #FFFFFF;
+    height: 190px;
+    margin-left: 0px;
+    margin-right: 0px;
+    .row{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .company {
+        height: 94px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 20px;
+        padding-left:30px;
+        margin-top: 25px;
+        .real-p{
+            margin-bottom: 0px;
+        }
+    }
+    .logo-propertyware-white {
+        img{
+            float: right;
+        }
+    }
+    .copyright-dates {
+        height: 32px;	
+        opacity: 0.75;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 16px;
+        padding-left: 30px;
+        p{
+            margin-top: 28px;
+        }
+        .terms{
+            float: right;
+            position: relative;
+            right: 20px;
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .footer-div{
+        .copyright-dates {
+            padding-left: 20px;
+            p{
+                margin-top: 16px;
+                margin-bottom: 0px;
+            }
+            .terms{
+                padding-left:0px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .footer-div{
+        .copyright-dates {
+            padding-left: 15px;
+            p{
+                margin-top: 16px;
+                margin-bottom: 0px;
+            }
+            .terms{
+                padding-left:0px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .footer-div{
+        height: auto;
+        .company {
+            padding-left:15px;
+            margin-top: 15px;
+            .real-p{
+                margin-bottom: 0px;
+            }
+        }
+        .copyright-dates{
+            .copyright{
+                left: 0px;
+                margin-top: 0px;
+            }
+            .terms{
+                margin-top: 0px;
+            }
+        }
+    }
+    img{    
+        width: 193px;
+    }
+   .terms{
+        float: left !important;
+        left: 17px;
+    }
+}

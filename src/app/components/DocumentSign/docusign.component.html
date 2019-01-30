@@ -1,0 +1,25 @@
+<div class="form-feilds">
+  <div class="row heading-div">
+    <p class="col-xl-5 col-lg-1 col-md-1 col-6 heading f-w-500">Documents</p>
+    <div class="col-xl-2 col-lg-3 col-md-4 col-6 offset-xl-5 offset-lg-8 offset-md-7 p-r-30">
+        <p class="rounded-box">
+            <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+            <span class="text">Application Fee $60.00</span>
+          </p>
+    </div> 
+  </div>
+  <div *ngIf="shared.docuCheck" class="error-info">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-times" aria-hidden="true"></i></div>
+      </div>
+      <p class="error-msg f-w-500">Please Complete the Docu Sign Process</p>
+    </div>
+  </div>
+  <div class="row docu">
+    <iframe src="http://www.africau.edu/images/default/sample.pdf" width="100%" height="100%" allowfullscreen> </iframe>
+  </div>
+  <div class="col-md-12 col-sm-12 col-xs-12 property-footer">
+    <app-propertywarefooter></app-propertywarefooter>
+  </div>
+</div>

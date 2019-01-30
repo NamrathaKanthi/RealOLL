@@ -1,0 +1,39 @@
+@mixin cancel-button{
+    border:1px solid #0076CC;
+    color: #0076CC;
+    background-color: #FFF;
+}
+
+.personal-info{
+    border:3px solid #00AA55;
+    height: 40px;
+    .input-group {
+        height: 37px;
+    .input-group-text{
+        background-color: #00AA55;
+        color:white;
+        border:1px solid #00AA55;
+        border-radius: 3px 0 0 3px;
+    }
+    .registration{
+        margin-bottom:0px;
+        padding-left: 17px;
+        padding-top: 7px;
+    }
+}
+}
+
+
+.form-feilds{
+    border: 1px solid #E1E1E2;
+    h6{
+      padding-left:20px;
+      margin-bottom: 40px;
+      margin-top: 20px;
+    }
+}
+
+.property-footer{
+    padding-left:0px;
+    padding-right:0px;
+}

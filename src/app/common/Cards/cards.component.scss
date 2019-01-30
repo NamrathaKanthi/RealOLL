@@ -1,0 +1,81 @@
+.card{
+    border: 1px solid #E1E1E2;
+    background-color: white;
+    height: 100px;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    .card-heading{
+        font-size: 16px;
+        padding-left: 20px;
+        padding-top: 15px;
+        color: #303436;
+        font-weight: 600;
+    }
+    .text-div{
+        margin-left: 0px;
+        margin-right: 0px;
+        .cardText{
+            font-size: 14px;
+            padding-left: 17px;
+            margin-bottom: 0px;
+            color: #303436;
+        }
+    }  
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .card{
+        margin-top: 15px;
+        margin-bottom: 15px;
+        .card-heading{
+            font-size: 16px;
+            padding-left: 16px;
+            padding-top: 10px;
+            color: #303436;
+        }
+        .text-div{
+            .cardText{
+                padding-left: 17px;
+            }
+        }  
+    } 
+}
+    
+@media only screen and (max-width: 768px) {
+    .card{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        .card-heading{
+            font-size: 14px;
+            padding-left: 15px;
+            padding-top: 7px;
+            color: #303436;
+            margin-bottom: 0px;
+        }
+        .text-div{
+            .cardText{
+                padding-left: 15px;
+            } 
+        }  
+    }
+}
+    
+@media only screen and (max-width: 425px) {
+    .card{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        height: 80px;
+        .card-heading{
+            padding-top: 10px;
+        }
+        .text-div{
+            margin-left: 0px;
+            margin-right: 0px;
+            .cardText{
+                padding-left: 15px;
+            }
+        }  
+    }
+}

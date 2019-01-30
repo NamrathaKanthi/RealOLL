@@ -1,0 +1,491 @@
+<div class="form-feilds">
+  <div class="form-content">
+    <form [formGroup]="personalInfo" novalidate>
+      <div class="p-0" formArrayName="details" *ngFor="let field of personalInfo.controls.details['controls']; let index = index;">
+        <div class="row formgroup1" [formGroupName]="index" *ngIf=" tabIndex === index">
+          <div class="col-md-4 col-sm-4 col-12 col-lg-4 first-form">
+            <div class="row margin">
+              <div class="col-md-5 col-sm-5 col-3 col-lg-5 p-r-0">
+                <label class="pull-right">First Name*</label>
+              </div>
+              <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                <input type="text" class="form-control" [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('firstNameReq').invalid && 
+                  personalInfo.get('details').controls[index].get('firstNameReq').dirty || personalInfo.get('details').controls[index].get('firstNameReq').invalid && shared.isNextClicked}"
+                  formControlName="firstNameReq">
+                <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('firstNameReq').invalid && personalInfo.get('details').controls[index].get('firstNameReq').dirty || 
+                personalInfo.get('details').controls[index].get('firstNameReq').invalid && shared.isNextClicked">*Plesae
+                  Enter First Name</span>
+              </div>
+            </div>
+            <div class="row margin">
+              <div class="col-md-5 col-sm-3 col-3 col-lg-5 p-r-0">
+                <label class="pull-right">Full Middle Name*</label>
+              </div>
+              <div class="col-md-5 col-sm-3 col-7 col-lg-5 p-r-5">
+                <input type="text" class="form-control" formControlName="middleNameReq" [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('middleNameReq').invalid && 
+                  personalInfo.get('details').controls[index].get('middleNameReq').dirty || personalInfo.get('details').controls[index].get('middleNameReq').invalid && shared.isNextClicked}">
+                <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('middleNameReq').invalid && personalInfo.get('details').controls[index].get('middleNameReq').dirty || 
+                personalInfo.get('details').controls[index].get('middleNameReq').invalid && shared.isNextClicked">*Plesae
+                  Enter Full Middle Name</span>
+              </div>
+              <div class="col-md-2 col-sm-2 col-2 col-lg-2 p-l-0 m-t-9 p-r-0 p-l-15">
+                <span class="p-r-10">None</span>
+                <label class="switch">
+                  <input type="checkbox" formControlName="none">
+                  <span class="slider round"></span>
+                </label>
+              </div>
+            </div>
+            <div class="row margin">
+              <div class="col-md-5 col-sm-5 col-3 col-lg-5 p-r-0">
+                <label class="pull-right">Last Name*</label>
+              </div>
+              <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                <input type="text" class="form-control" formControlName="lastNameReq" [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('lastNameReq').invalid && 
+                  personalInfo.get('details').controls[index].get('lastNameReq').dirty || personalInfo.get('details').controls[index].get('lastNameReq').invalid && shared.isNextClicked}">
+                <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('lastNameReq').invalid && personalInfo.get('details').controls[index].get('lastNameReq').dirty || 
+                personalInfo.get('details').controls[index].get('lastNameReq').invalid && shared.isNextClicked">*Plesae
+                  Enter Last Name</span>
+              </div>
+            </div>
+            <div class="row margin">
+              <div class="col-md-3 col-sm-3 col-3 col-lg-3 p-r-0">
+                <label class="pull-right">Suffix</label>
+              </div>
+              <div class="col-md-3 col-sm-3 col-9 col-lg-3">
+                <select class="form-control" id="exampleFormControlSelect1" formControlName="suffixReq">
+                  <option>Ms.</option>
+                  <option>Mrs.</option>
+                  <option>Mr.</option>
+                </select>
+              </div>
+              <div class="col-md-3 col-sm-3 col-3 col-lg-3 p-0 r-p-l-15 m-t-30 p-l-10">
+                <label class="pull-right">Gender*</label>
+              </div>
+              <div class="col-md-3 col-sm-3 col-9 col-lg-3 m-t-30">
+                <select class="form-control" id="exampleFormControlSelect1" formControlName="genderRequired" [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('genderRequired').invalid && 
+                  personalInfo.get('details').controls[index].get('genderRequired').dirty || personalInfo.get('details').controls[index].get('genderRequired').invalid && shared.isNextClicked}">
+                  <option *ngFor="let option of shared.genderOptions" [value]="option.value">{{option.name}}</option>
+                </select>
+                <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('genderRequired').invalid && personalInfo.get('details').controls[index].get('genderRequired').dirty || 
+                personalInfo.get('details').controls[index].get('genderRequired').invalid && shared.isNextClicked">*Plesae
+                  Enter Gender</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-12 col-lg-4 first-form">
+            <div class="row">
+              <div class="col-md-5 col-sm-5 col-3 col-lg-5 p-r-0 p-l-0 r-p-l-15">
+                <label class="pull-right">Maiden Name</label>
+              </div>
+              <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                <input type="text" class="form-control" formControlName="maidenName">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                <label class="pull-right">Driver License #</label>
+              </div>
+              <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                <input type="text" class="form-control" formControlName="driversLicenseNumberReq">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-5 col-sm-5 col-3 col-lg-5 p-r-0 p-l-0">
+                <label class="pull-right">Driver License State</label>
+              </div>
+              <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                <select class="form-control" id="exampleFormControlSelect1" formControlName="licenseState">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-4 col-12 col-lg-4 first-form">
+            <div class="row">
+              <div class="col-md-5 col-sm-5 col-3 col-lg-5 p-r-0 p-l-0 r-p-l-15">
+                <label class="pull-right">Home Phone</label>
+              </div>
+              <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                <input type="text" class="form-control" formControlName="homePhoneReq">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-3 col-lg-6 p-r-0">
+                <label class="pull-right">Mobile Phone*</label>
+              </div>
+              <div class="col-md-6 col-sm-6 col-9 col-lg-6">
+                <input type="text" class="form-control" formControlName="mobilePhoneReq" [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('mobilePhoneReq').invalid && 
+                  personalInfo.get('details').controls[index].get('mobilePhoneReq').dirty || personalInfo.get('details').controls[index].get('mobilePhoneReq').invalid && shared.isNextClicked}">
+                <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('mobilePhoneReq').invalid && personalInfo.get('details').controls[index].get('mobilePhoneReq').dirty || 
+                  personalInfo.get('details').controls[index].get('mobilePhoneReq').invalid && shared.isNextClicked">*Plesae
+                  Enter a Valid Mobile Number</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-3 col-lg-6">
+                <label class="pull-right">SSN/SIN</label>
+              </div>
+              <div class="col-md-6 col-sm-6 col-9 col-lg-6">
+                <input type="text" class="form-control" formControlName="ssnReq">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-sm-6 col-3 col-lg-6 p-r-0 p-l-0">
+                <label class="pull-right">Date of Birth*</label>
+              </div>
+              <div class="col-md-6 col-sm-6 col-9 col-lg-6">
+                <div class="input-group">
+                  <input class="form-control" name="dp" ngbDatepicker #dob="ngbDatepicker" placement="bottom"
+                    formControlName="birthDateReq" [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('birthDateReq').invalid && 
+                    personalInfo.get('details').controls[index].get('birthDateReq').dirty || personalInfo.get('details').controls[index].get('birthDateReq').invalid && shared.isNextClicked,
+                    'text-color':personalInfo.get('details').controls[index].get('birthDateReq').valid}">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary text-color" (click)="dob.toggle()" type="button"><i class="fa fa-calendar-o"
+                        aria-hidden="true"></i></button>
+                  </div>
+                </div>
+                <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('birthDateReq').invalid && personalInfo.get('details').controls[index].get('birthDateReq').dirty || 
+                  personalInfo.get('details').controls[index].get('birthDateReq').invalid && shared.isNextClicked">*Plesae
+                  Enter DOB</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="line" *ngIf=" tabIndex === index"></div>
+        <div [formGroupName]="index" *ngIf=" tabIndex === index">
+          <div class="row formgroup2" formGroupName="currentAddress">
+            <div class="offset-lg-1 col-md-6 col-12 col-sm-6 col-lg-5">
+              <div class="input-div row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5 input-text">
+                  <label class="pull-right">Current Address*</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7 input-box">
+                  <input type="text" class="form-control" formControlName="currentResidenceAddressReq" [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceAddressReq').invalid && 
+                    personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceAddressReq').dirty || personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceAddressReq').invalid 
+                    && shared.isNextClicked}">
+                  <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceAddressReq').invalid && personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceAddressReq').dirty || 
+                  personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceAddressReq').invalid && shared.isNextClicked">*Plesae
+                    Enter Current Address</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5 p-l-0 p-r-0">
+                  <label class="pull-right">Address Cont.</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <input type="text" class="form-control" formControlName="currentResidenceAddressContReq">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">City*</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <input type="text" class="form-control" formControlName="currentResidenceCityReq" [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceCityReq').invalid && 
+                    personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceCityReq').dirty || personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceCityReq').invalid && 
+                    shared.isNextClicked}">
+                  <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceCityReq').invalid && personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceCityReq').dirty || 
+                  personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceCityReq').invalid && shared.isNextClicked">*Plesae
+                    Enter City</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">State*</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <select class="form-control" id="exampleFormControlSelect1" formControlName="currentResidenceStateReq"
+                    [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceStateReq').invalid && 
+                    personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceStateReq').dirty || personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceStateReq').invalid && 
+                    shared.isNextClicked}">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                  <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceStateReq').invalid && personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceStateReq').dirty || 
+                  personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceStateReq').invalid && shared.isNextClicked">*Plesae
+                    Enter State</span>
+                </div>
+              </div>
+              <div class="row input-div">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5 input-text">
+                  <label class="pull-right">Zip/Postal Code*</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7 input-box">
+                  <input type="text" class="form-control" formControlName="currentResidenceZipPostalReq" [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceZipPostalReq').invalid && 
+                    personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceZipPostalReq').dirty || personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceZipPostalReq').invalid && 
+                    shared.isNextClicked}">
+                  <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceZipPostalReq').invalid && personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceZipPostalReq').dirty || 
+                  personalInfo.get('details').controls[index].get('currentAddress').get('currentResidenceZipPostalReq').invalid && shared.isNextClicked">*Plesae
+                    Enter Postal Code</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5 p-l-0 p-r-0">
+                  <label class="pull-right">Rent or Own ?</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <select class="form-control" id="exampleFormControlSelect1" formControlName="currentResidenceTypeReq">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-12 col-sm-6 col-lg-5">
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">Landlord Name</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <input type="text" class="form-control" formControlName="currentResidenceLandlordNameReq">
+                </div>
+              </div>
+              <div class="row input-div">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5 input-text">
+                  <label class="pull-right">Landlord Phone</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7 input-box">
+                  <input type="text" class="form-control" formControlName="landlordPhone">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">Rent Amount</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <input type="text" class="form-control" formControlName="currentResidenceRentReq">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">Rent Period</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <select class="form-control" id="exampleFormControlSelect1" formControlName="currPeriod">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">Move in date</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <div class="form-group calender-width">
+                    <div class="input-group">
+                      <input class="form-control text-color" name="dp" formControlName="currMoveIn" ngbDatepicker
+                        #currMoveIn="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary text-color" (click)="currMoveIn.toggle()" type="button"><i
+                            class="fa fa-calendar-o" aria-hidden="true"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">Move Out Date</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <div class="form-group calender-width">
+                    <div class="input-group">
+                      <input class="form-control text-color" name="dp" formControlName="currMoveOut" ngbDatepicker
+                        #currMoveOut="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary text-color" (click)="currMoveOut.toggle()" type="button"><i
+                            class="fa fa-calendar-o" aria-hidden="true"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="offset-lg-1">
+            </div>
+          </div>
+        </div>
+        <div class="line" *ngIf=" tabIndex === index"></div>
+        <div class="row checkbox-div">
+          <div class="col-lg-4 offset-lg-2">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="checkbox" aria-label="Checkbox for following text input">
+                </div>
+                <p>If Current Address is same as Previous Address</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div [formGroupName]="index" *ngIf=" tabIndex === index">
+          <div class="row formgroup2" formGroupName="previousAddress">
+            <div class="offset-lg-1 col-md-6 col-12 col-sm-6 col-lg-5">
+              <div class="row input-div">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5 input-text">
+                  <label class="pull-right">Previous Address</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7 input-box">
+                  <input type="text" class="form-control" formControlName="residenceHistoryAddressReq">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">Address Cont.</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <input type="text" class="form-control" formControlName="residenceHistoryAddressContReq">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">City*</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <input type="text" class="form-control" formControlName="residenceHistoryCityReq" [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryCityReq').invalid && 
+                    personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryCityReq').dirty || personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryCityReq').invalid && shared.isNextClicked}">
+                  <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryCityReq').invalid && personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryCityReq').dirty || 
+                  personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryCityReq').invalid && shared.isNextClicked">*Plesae
+                    Enter City</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">State*</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <select class="form-control" id="exampleFormControlSelect1" formControlName="residenceHistoryStateReq"
+                    [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryStateReq').invalid && 
+                    personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryStateReq').dirty || personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryStateReq').invalid && shared.isNextClicked}">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                  <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryStateReq').invalid && personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryStateReq').dirty || 
+                  personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryStateReq').invalid && shared.isNextClicked">*Plesae
+                    Enter State</span>
+                </div>
+              </div>
+              <div class="row input-div">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5 input-text">
+                  <label class="pull-right">Zip/Postal Code*</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7 input-box">
+                  <input type="text" class="form-control" formControlName="residenceHistoryZipPostalReq" [ngClass]="{'is-invalid':personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryZipPostalReq').invalid && 
+                    personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryZipPostalReq').dirty || personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryZipPostalReq').invalid && shared.isNextClicked}">
+                  <span class="error-msg" *ngIf="personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryZipPostalReq').invalid && personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryZipPostalReq').dirty || 
+                  personalInfo.get('details').controls[index].get('previousAddress').get('residenceHistoryZipPostalReq').invalid && shared.isNextClicked">*Plesae
+                    Enter Postal Code</span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">Rent or Own ?</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <select class="form-control" id="exampleFormControlSelect1" formControlName="residenceHistoryTypeReq">
+                    <option>Rent</option>
+                    <option>Own</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-12 col-sm-6 col-lg-5">
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">Landlord Name</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <input type="text" class="form-control" formControlName="residenceHistoryLandlordNameReq">
+                </div>
+              </div>
+              <div class="row input-div">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5 input-text">
+                  <label class="pull-right">Landlord Phone</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7 input-box">
+                  <input type="text" class="form-control" formControlName="prevLandlordPhone">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">Rent Amount</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <input type="text" class="form-control" formControlName="prevAmount">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">Rent Period</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <select class="form-control" id="exampleFormControlSelect1" formControlName="prevPeriod">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">Move in date</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <div class="form-group calender-width">
+                    <div class="input-group">
+                      <input class="form-control text-color" name="dp" formControlName="prevMoveIn" ngbDatepicker
+                        #prevMoveIn="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary text-color" (click)="prevMoveIn.toggle()" type="button"><i
+                            class="fa fa-calendar-o" aria-hidden="true"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-5 col-sm-5 col-3 col-lg-5">
+                  <label class="pull-right">Move Out Date</label>
+                </div>
+                <div class="col-md-7 col-sm-7 col-9 col-lg-7">
+                  <div class="form-group calender-width">
+                    <div class="input-group">
+                      <input class="form-control text-color" name="dp" formControlName="prevMoveOut" ngbDatepicker
+                        #prevMoveOut="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary text-color" (click)="prevMoveOut.toggle()" type="button"><i
+                            class="fa fa-calendar-o" aria-hidden="true"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="offset-lg-1">
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,165 @@
+<form [formGroup]="tenantForm">
+  <div class="col-md-12 col-sm-12 col-xs-12 content-div">
+    <div class="row property-div">
+      <div class="col-md-6 col-sm-4 col-8 col-lg-4 property-text">
+        <p class="heading f-w-500">Property</p>
+        <p class="text-value">3561 East Y Avenue, Vicksburg, MI 49097</p>
+      </div>
+      <div class="offset-md-4 offset-lg-6 offset-sm-6 col-md-2 col-sm-2 col-4 col-lg-2 id-div">
+        <span class="id-circle"><i class="fa fa-circle" aria-hidden="true"></i></span>
+        <span class="id-text">ID -</span><span class="id-text">{{jsonData?.unit.id}}</span>
+      </div>
+    </div>
+    <div class="row table-div">
+      <div class="col-md-2 col-12 col-sm-2 image-div">
+        <img src="../../assets/bungalow.jpg">
+        <!-- {{jsonData?unit.defaultUnitImage}} -->
+      </div>
+      <div class="table-row col-md-5 col-12 col-sm-5">
+        <div class="rows-div row">
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6 desired-date">
+            <p>Desired Move-In Date</p>
+          </div>
+          <div class="Cell col-lg-6 col-6 col-sm-6 col-md-6 p-l-0">
+            <div class="input-group">
+              <input class="form-control text-color" name="dp" formControlName="moveInDate" placeholder="mm/dd/yyyy"
+                ngbDatepicker #d="ngbDatepicker" placement="bottom" [ngClass]="{'is-invalid':tenantForm.get('moveInDate').invalid && tenantForm.get('moveInDate').dirty || 
+                tenantForm.get('moveInDate').invalid && shared.isNextClicked,'text-color':tenantForm.get('moveInDate').valid}">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><i class="fa fa-calendar-o"
+                    aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="rows-div row">
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p>Type</p>
+          </div>
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p class="p-r-20">{{jsonData?.unit.type}}</p>
+          </div>
+        </div>
+        <div class="rows-div row">
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p>Total Area</p>
+          </div>
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p>{{jsonData?.unit.area}}</p>
+          </div>
+        </div>
+        <div class="rows-div row">
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p>Bedrooms</p>
+          </div>
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p>{{jsonData?.unit.numberBedrooms}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="table-row col-md-5 col-12 col-sm-5">
+        <div class="rows-div row">
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p>Bathrooms</p>
+          </div>
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p>{{jsonData?.unit.numberBathrooms}}</p>
+          </div>
+        </div>
+        <div class="rows-div row">
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p>Rent</p>
+          </div>
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p class="p-r-15">{{jsonData?.unit.targetRentDescription}}</p>
+          </div>
+        </div>
+        <div class="rows-div row">
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p>Deposit</p>
+          </div>
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p>{{jsonData?.unit.targetDeposit}}</p>
+          </div>
+        </div>
+        <div class="rows-div row">
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p>Avaiable</p>
+          </div>
+          <div class="Cell col-lg-6 col-md-6 col-sm-6 col-6">
+            <p>{{jsonData?.unit.availableDate}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row text-div">
+      <p class="f-w-500">Thank you for your interest in our property! Please read and complete all fields below. If you
+        have any
+        questions, please feel free to contact at (616) 301-9450.</p>
+      <p class="f-w-500">After your application has been submitted,you will be contacted by our management office on
+        the
+        status of
+        your application. Applications are ran in the order they are received.</p>
+      <p class="full-complete-text">
+        Fully complete the application and be sure to pay the application fee via credit card.We will not consider your
+        application unless we receive the completed application along with the application fee.
+      </p>
+      <p>The application fee is $40.00 per adult application or guarantor applicant, 18 years of age or older.Every
+        occupant 18 years of age or older must fill out an application. The application fee is based on the numnber of
+        contacts you list on the application. <span class="f-w-500">Application fees are non-refundable. The
+          application
+          service fee is
+          $5.00.</span> </p>
+      <div class="m-t-30">
+        <p class="f-w-500">The following items are required before an application is approved:</p>
+        <p>Proof of income-for all applocants (last 2 months of paystubs from current employer) must be submitted to
+          our
+          office. If starting a new possition, then submit an offer letter on company letterhead.</p>
+        <p>Send via email propertymanagement@accesspmgroup.com.</p>
+        <p>Self-employed applicants - must submit previous years's filed tax return for income verification.</p>
+        <p>Copies of Drivers's License or government issued photo identification card - for all adult applicants must
+          be
+          sent to our office before we can approve your application. Send via email
+          propertymangement@accesspmgroup.com.</p>
+      </div>
+      <div class="m-t-30">
+        <p>APPLICATIONS CANNOT BE APPROVED UNTIL ALL INFORMATION IS RECEIVED IN OUR OFFICE.</p>
+        <p>All deposits are NON-REFUNDABLE.</p>
+      </div>
+      <p class="m-t-30">A $100 lease administration service fee will be charged to all new leases at the time
+        of lease signing(Not
+        Applicable for Boltwood Apartments-See-Below).</p>
+      <div class="m-t-30">
+        <p class="f-w-500">Pet Policy:</p>
+        <p>Staffordshire Terriers(a.k.a. Pit Bulls), Rottweilers,Doberman Pinscher's,wolf-dogs,Chow-Chows,
+          Akita's,German Shepard's and other traditionally aggressive breeds and animals with a history of agressive
+          behaviour are not permitted. Mixes of restricted breeds are prohibited as well.</p>
+      </div>
+      <div class="m-t-30">
+        <p class="f-w-500">Pet Fees/Deposit (Not Applicable for Boltwood Apartments-See Below):</p>
+        <p>Additional Security Deposit of $250 (Refundable) + Non-Refundable Pet Fee of $100.00 (One-Time Fee at move
+          in).</p>
+        <p>Additional Pet rent of $35 per month for up to 2 pets with $35 per pet after 2 (Monthly Fee,
+          Non-Refundable).</p>
+      </div>
+      <div class="m-t-30 row">
+        <p class="col-md-12 f-w-500">Boltwood Apartments:</p>
+        <p class="col-md-12">Non-Refundable Administration Fee of $350 due to reserve room.</p>
+        <p class="col-md-12">Pet Fee/Rent: Additional $300 Non-Refundable Pet Fee. Additional Pet rent of $35 per month
+          for 2 pets.</p>
+      </div>
+      <div class="input-group mb-3 check-box">
+        <div class="input-group-prepend">
+          <div class="input-group-text">
+            <span><input type="checkbox" formControlName="accept" aria-label="Checkbox for following text input"></span>
+            <span class="i-accept" [ngClass]="{'error':tenantForm.get('accept').invalid && tenantForm.get('accept').dirty ||  tenantForm.get('accept').invalid && shared.isNextClicked}">I
+              accept</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="property-footer">
+      <app-propertywarefooter></app-propertywarefooter>
+    </div>
+  </div>
+</form>

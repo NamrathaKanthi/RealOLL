@@ -1,0 +1,28 @@
+<div class="form-feilds">
+  <h6>{{shared.headingText}}</h6>
+  <ngb-tabset>
+    <ngb-tab id={{tab.title}}_{{i}} *ngFor="let tab of tabs;let i = index;">
+      <ng-template ngbTabTitle>
+        {{tab.title}}
+        <span *ngIf="tab.title !== 'Primary Applicant'">{{i}}</span>
+      </ng-template>
+      <ng-template ngbTabContent>
+        <div class="row button-div" *ngIf="!shared.nextClicked">
+          <div *ngIf="tabs.length>1" class="offset-md-9 offset-sm-7 offset-xs-9 offset-lg-10 col-md-2 col-xs-2 col-sm-2 col-lg-5">
+            <button type="button" *ngIf="i!= 0" class="btn btn-primary delete-button m-r-20" (click)='deleteApplicantFn()'>Delete Applicant</button>
+            <button *ngIf="tabs.length>1" type="button" class="btn btn-primary add-button" (click)='addApplicantFn()'>Add Applicant</button>
+          </div>
+          <div *ngIf="tabs.length==1" class="offset-md-10 offset-sm-9 offset-xs-9 offset-lg-11 col-md-2 col-xs-2 col-sm-2 col-lg-1">
+            <button type="button" class="btn btn-primary add-button2" (click)='addApplicantFn()'>Add Applicant</button>
+          </div>
+        </div>
+        <div *ngIf="!shared.nextClicked">
+          <app-formfields [personalInfo]=personalInfo [tabIndex]=i [tabs]=tabs></app-formfields>
+        </div>
+        <div *ngIf="shared.nextClicked">
+          <router-outlet></router-outlet>
+        </div>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>

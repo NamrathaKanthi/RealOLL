@@ -1,0 +1,48 @@
+@mixin cancel-button{
+    border:1px solid #0076CC;
+    color: #0076CC;
+    background-color: #FFF;
+}
+.form-feilds{
+    border: 1px solid #E1E1E2;
+    // height: 635px;
+    h6{
+      padding-left:20px;
+      margin-bottom: 40px;
+      margin-top: 20px;
+    }
+}
+
+@mixin cancel-button{
+    border:1px solid #0076CC;
+    color: #0076CC;
+    background-color: #FFF;
+    border-radius: 50px;
+}
+
+@mixin add-button {
+background-color: #0076CC;
+border-radius: 50px;
+}
+
+.button-div{
+    margin: 30px 20px 0px 0px;
+    .add-button{
+        @include add-button(); 
+        // margin-left: 10px;
+        
+    }
+    .add-button2{
+        @include add-button(); 
+        float: right;
+    }
+    .delete-button{
+        @include cancel-button();
+    }
+}
+
+.property-footer{
+    padding-left:0px;
+    padding-right:0px;
+}
+

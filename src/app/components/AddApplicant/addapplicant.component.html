@@ -1,0 +1,37 @@
+<div class="row personal-info">
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-check" aria-hidden="true"></i></div>
+    </div>
+    <p class="registration f-w-500">Registration Successful</p>
+  </div>
+</div>
+<div class="form-feilds">
+  <h6>Personal Information</h6>
+  <ngb-tabset>
+    <ngb-tab title="Primary Applicant">
+      <ng-template ngbTabContent>
+        <div class="row button-div">
+          <button type="button" class="btn btn-primary add-button col-md-2 col-xs-2 col-sm-2 col-lg-1" style="margin-left:90px;"
+            (click)='addApplicantFn()'>Add
+            Applicant</button>
+        </div>
+        <app-formfields></app-formfields>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+  <ngb-tabset>
+    <ngb-tab title="Applicant 2">
+      <ng-template ngbTabContent>
+        <div class="row button-div">
+          <button type="button" class="btn btn-primary delete-button offset-md-8 offset-sm-7 offset-xs-6 offset-lg-9 col-md-2 col-xs-2 col-sm-2 col-lg-1">Delete
+            Applicant</button>
+          <button type="button" class="btn btn-primary add-button col-md-2 col-xs-2 col-sm-2 col-lg-1" style="margin-left:90px;"
+            (click)='addApplicantFn()'>Add
+            Applicant</button>
+        </div>
+        <app-formfields></app-formfields>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>

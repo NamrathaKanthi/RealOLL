@@ -1,0 +1,35 @@
+<div *ngIf="registration" class="row personal-info">
+  <div class="input-group">
+    <div class="input-group-prepend">
+      <div class="input-group-text" id="btnGroupAddon"><i class="fa fa-check" aria-hidden="true"></i></div>
+    </div>
+    <p class="registration f-w-500">Registration Successful</p>
+  </div>
+</div>
+
+<div *ngIf='progress'>
+  <div class="row tenant-header">
+    <h5 class="col-9 col-md-3 col-sm-2 col-lg-3">Tenant Application</h5>
+    <!-- <div class="offset-md-7 offset-sm-7 offset-lg-7 col-md-2 col-sm-2 col-xs-6 col-lg-2 icons-div">
+      <span class="col-xs-6 col-md-6 col-sm-6 col-lg-6">
+        <i class="fa fa-print" aria-hidden="true"></i>
+      </span>
+      <span class="col-xs-6 col-md-6 col-lg-6 col-sm-6">
+        <i class="fa fa-home" aria-hidden="true"></i>
+      </span>
+    </div> -->
+    <div class="offset-md-6 offset-sm-1 offset-lg-7 col-md-1 col-sm-2 col-3 col-lg-1 icons-div">
+      <div ngbDropdown placement="bottom-right" class="d-inline-block">
+        <button class="btn actions" id="dropdownBasic1" ngbDropdownToggle>Actions</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+          <button class="dropdown-item">Return to X</button>
+          <button class="dropdown-item" (click)='printApp()'>print Blank Application</button>
+          <button class="dropdown-item" (click)='changeInViewFn()'>view Submitted Apps</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-12 col-sm-12 col-xs-12 progress-div">
+    <ngb-progressbar showValue="true" type="success" [value]="progressValue" [max]="100"></ngb-progressbar>
+  </div>
+</div>

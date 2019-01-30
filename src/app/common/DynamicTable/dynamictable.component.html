@@ -1,0 +1,57 @@
+<div class="form-group main-div">
+  <div class="col-md-12 pad-leftright" style="cursor:pointer;">
+    <div (click)="addEmployerToFormArray()">
+      <span><i class="fa fa-plus plus-icon"></i></span>
+      <span class="emp-title">{{title}}</span>
+    </div>
+  </div>
+  <form [formGroup]="tablesForm">
+    <div class="row pad-leftright table-responsive">
+      <table class="table">
+        <thead class="theader">
+          <tr>
+            <th class="f-w-500" *ngFor="let formfeild of formFields">{{formfeild.name}}</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let row of employeeRows.controls; let ind = index;">
+            <td formArrayName={{keyName}} *ngFor="let field of formFields;let i = index">
+              <div [formGroupName]="ind" class="form-group" style="margin-bottom:0px;">
+                <ng-container [ngSwitch]="field?.type">
+                  <input *ngSwitchCase="'text'" [type]="field.type" class="form-control" id="field.formControl"
+                    [formControlName]="field.formControl" [ngClass]="{'is-invalid':tablesForm.get(keyName).controls[ind].get(field.formControl).invalid && 
+                      tablesForm.get(keyName).controls[ind].get(field.formControl).dirty || tablesForm.get(keyName).controls[ind].get(field.formControl).invalid
+                      && shared.isNextClicked}" />
+                  <select *ngSwitchCase="'select'" class="form-control" id="field.formControl" [formControlName]="field.formControl"
+                    [ngClass]="{'is-invalid':tablesForm.get(keyName).controls[ind].get(field.formControl).invalid && 
+                    tablesForm.get(keyName).controls[ind].get(field.formControl).dirty || tablesForm.get(keyName).controls[ind].get(field.formControl).invalid 
+                    && shared.isNextClicked}">
+                    <option *ngFor="let x of field.data" [value]="x.value">{{x.name}}</option>
+                  </select>
+                  <ng-container *ngSwitchCase="'date'">
+                    <div class="form-group calender-width">
+                      <div class="input-group">
+                        <input class="form-control" name="dp" [formControlName]="field.formControl" placement="bottom"
+                          ngbDatepicker #d="ngbDatepicker" [ngClass]="{'is-invalid':tablesForm.get(keyName).controls[ind].get(field.formControl).invalid && 
+                            tablesForm.get(keyName).controls[ind].get(field.formControl).dirty || tablesForm.get(keyName).controls[ind].get(field.formControl).invalid
+                            && shared.isNextClicked,'text-color':tablesForm.get(keyName).controls[ind].get(field.formControl).valid}" />
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary text-color" placement="bottom" (click)="d.toggle()"
+                            type="button"><i class="fa fa-calendar-o" aria-hidden="true"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-container>
+                </ng-container>
+              </div>
+            </td>
+            <td class="delete-record">
+              <span (click)="deleteRecord(ind)"><i class="fa fa-trash pull-right"></i></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </form>
+</div>

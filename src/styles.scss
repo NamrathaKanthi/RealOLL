@@ -1,0 +1,126 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+@mixin cancel-button{
+    border:1px solid #0076CC;
+    color: #0076CC;
+    background-color: #FFF;
+    border-radius: 50px;
+    font-size: 14px;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i');
+body{
+    font-family: 'Roboto','open Sans','Lato','Monterrat','Raleway','Oswald';
+}
+
+ngb-tabset{
+    ul{
+        box-shadow: inset 0 -3px 0 0 rgba(14,24,28,0.12);
+        height: 36px;
+        margin: 0px 30px 0px 30px;
+    }
+    .nav-tabs .nav-link{
+        border: 0px;
+    }
+    .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link{
+        box-shadow: inset 0 -3px 0 0 #0076CC;
+        width: 160px;
+        height: 36px;
+        font-size: 14px;
+        font-weight: 500;	
+        line-height: 22px;	
+        text-align: center;
+    }
+    .nav-tabs{
+        border: 0px;
+    }
+    a{
+        color: rgba(14,24,28,0.87) !important;
+    }
+}
+
+
+
+
+//paddings
+
+.p-l-0{
+padding-left: 0px;
+}
+
+.p-r-0{
+    padding-right: 0px;
+}
+.p-r-10{
+    padding-right: 10px;
+}
+.p-r-25{
+    padding-right: 25px;
+}
+.p-r-30{
+    padding-right: 30px;
+}
+
+//margins
+
+.m-l-0{
+    margin-left: 0px;
+}
+
+.m-r-0{
+    margin-right: 0px;
+}
+
+.m-b-0{
+    margin-bottom: 0px;
+}
+
+.m-t-0{
+    margin-top: 0px;
+}
+
+.m-t-20{
+    margin-top: 20px;
+}
+
+.m-t-30{
+    margin-top: 30px;
+}
+
+.m-b-20{
+    margin-bottom: 20px;
+}
+.m-r-20{
+    margin-right: 20px
+}
+
+
+//font-size
+
+.f-14{
+    font-size: 14px;
+}
+
+.f-16{
+    font-size: 16px;
+}
+
+.f-20{
+    font-size: 20px;
+}
+
+//font-weights
+
+.f-w-500{
+    font-weight: 500;
+}
+
+.f-w-600{
+    font-weight: 600;
+}
+
+
+.is-invalid{
+    border-color: #d31612 !important;
+}

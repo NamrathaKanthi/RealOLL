@@ -1,0 +1,272 @@
+@mixin cancel-button{
+  border:1px solid #0076CC;
+  color: #0076CC;
+  background-color: #FFF;
+  border-radius: 50px;
+}
+.form-feilds{
+  .form-content{
+    margin-top:50px;
+    .row{
+      margin-bottom: 30px;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    .formgroup1{
+      margin-left: 0px;
+      margin-right: 15px;
+      .row{
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+    }
+    .first-form{
+      padding-left: 0px;
+      padding-right: 0px;
+      .margin{
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+    }
+    .formgroup2{
+      margin-top: 80px;
+      margin-left: 0px;
+      margin-right: 0px;
+      .row{
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+    }
+    .checkbox-div{
+      margin-bottom: 0px;
+      margin-top: 20px;
+      p{
+        margin-bottom: 0px;
+        margin-top: 10px;
+      }
+      .input-group{
+        margin-bottom: 0px;
+        .input-group-prepend{
+          .input-group-text{
+            background-color: white;
+            border-top-right-radius: none;
+            border-bottom-right-radius: none;
+          }
+        }
+      } 
+    }
+    label{
+      font-size: 14px;	
+      line-height: 22px;	
+      text-align: right;
+    }
+  }
+}
+.line {
+  height: 2px;
+  border: 1px solid #E5E5E6;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 32px;
+  height: 20px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+.error-msg{
+  color: #d31612;
+  font-size: 12px;
+  font-weight: 500;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 1px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(14px);
+  -ms-transform: translateX(14px);
+  transform: translateX(14px);
+}
+
+.slider.round {
+  border-radius: 100px;
+}
+
+.slider.round:before {
+  border-radius: 100px;
+}
+
+.text-color{
+  color: #0076CC;
+  border:1px solid #ced4da
+}
+
+.p-0{
+  padding: 0px;
+}
+
+.m-t-30{
+  margin-top: 0px;
+}
+
+.m-t-9{
+  margin-top: 9px;
+}
+
+.btn-outline-secondary:hover{
+  color:  #fff!important;
+  background-color: #0076CC !important;
+  border-color: #ced4da !important;
+}
+
+@media only screen and (max-width: 1024px) {
+  .p-r-5{
+    padding-right: 5px;
+  }
+  .p-r-0{
+    padding-right: 0px;
+  }
+  .p-l-0{
+    padding-left: 0px;
+  }
+
+  .m-t-9{
+    margin-top: 0px;
+  }
+  .error-msg{
+    color: #d31612;
+    font-size: 11px;
+    font-weight: 500;
+  }
+  .form-content{
+    .formgroup2{
+      .input-div{
+        .input-text{
+          padding-right: 0px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .p-r-5{
+    padding-right: 5px;
+  }
+  .p-r-0{
+    padding-right: 0px;
+  }
+  .p-l-0{
+    padding-left: 0px;
+  }
+  .m-t-30{
+    margin-top: 0px;
+  }
+  .m-t-9{
+    margin-top: 0px;
+  }
+  .error-msg{
+    color: #d31612;
+    font-size: 10px;
+    font-weight: 500;
+  }
+  .form-content{
+    .formgroup1{
+      margin: 0px !important;
+    }
+    .formgroup2{
+      .input-div{
+        .input-text{
+          padding-right: 0px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .form-content{
+    .row{
+      margin-bottom: 20px;
+    }
+    .formgroup1{
+      margin-left: 15px !important;
+      margin-right: 15px;
+      .row{
+        margin-left: 0px;
+        margin-right: 0px;
+      }
+      label{
+        margin-bottom: 0px;
+      }
+    }
+    .formgroup2{
+      margin-top: 50px !important;
+      label{
+        margin-bottom: 0px;
+      }
+    }
+    label{
+      float: none !important;
+    }
+    .error-msg{
+      color: #d31612;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .m-t-9{
+      margin-top: 0px;
+    }
+    .p-l-15{
+      padding-left: 10px !important;
+    }
+    .p-r-0{
+      padding-right: 0px !important;
+    }
+    .p-l-0{
+      padding-left: 0px !important;
+    }
+    .m-t-30{
+      margin-top: 30px;
+    }
+    .p-l-10{
+      padding-left: 15px !important;
+    }
+  }
+  .line {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

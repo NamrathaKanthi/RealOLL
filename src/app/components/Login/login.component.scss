@@ -1,0 +1,36 @@
+@import "../../.././styles.scss";
+
+.modal-body{
+    padding: 30px 60px;
+    .form-group{
+        .password{
+            margin-top: 10px;
+        }
+        p{
+            font-size: 12px;
+            cursor:pointer;
+        }
+    }
+    .about-you-text{
+        margin:20px 0px 14px;
+        font-size: 20px;
+    }
+    .form-group{
+        label{
+            font-size: 14px;
+        }
+    }
+}
+
+.modal-footer{
+    border: none;
+    margin-left: 0px;
+    margin-right: 0px;
+    .modal-cancel-button{
+        @include cancel-button();
+        width:100px;
+    }
+    .btn-primary{
+        border-radius: 50px;
+    }
+}

@@ -1,0 +1,26 @@
+@media screen {
+    .container-fluid{
+        height: 100%;
+        .router{
+            height:650px;
+            overflow-y: scroll;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+
+    ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent; /* make scrollbar transparent */
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .router{
+        height:630px !important;
+    }
+}
+
+@media print {
+    height: 800px;
+}
