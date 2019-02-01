@@ -29,7 +29,7 @@
       }
     }
     .formgroup2{
-      margin-top: 80px;
+      margin-top: 30px;
       margin-left: 0px;
       margin-right: 0px;
       .row{
@@ -40,20 +40,21 @@
     .checkbox-div{
       margin-bottom: 0px;
       margin-top: 20px;
-      p{
-        margin-bottom: 0px;
-        margin-top: 10px;
-      }
       .input-group{
         margin-bottom: 0px;
         .input-group-prepend{
           .input-group-text{
             background-color: white;
-            border-top-right-radius: none;
-            border-bottom-right-radius: none;
+           border-radius: 0.25rem;
           }
         }
       } 
+      p{
+        margin-bottom: 0px;
+        margin-top: 5px;
+        margin-left: 10px;
+        font-size: 14px;
+      }
     }
     label{
       font-size: 14px;	

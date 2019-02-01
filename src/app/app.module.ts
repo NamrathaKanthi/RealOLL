@@ -19,7 +19,7 @@ import { HeaderComponent } from './components/ApplicationHeader/header.component
 import { FooterComponent } from './components/Footer/footer.component';
 import { TenantappComponent } from './components/TenantApplication/tenantapp.component';
 import { PersonalInfoComponent } from './components/PersonalInformation/personal-info.component';
-import { AddapplicantComponent } from './components/AddApplicant/addapplicant.component';
+// import { AddapplicantComponent } from './components/AddApplicant/addapplicant.component';
 import { AddemployerComponent } from './components/Employee/addemployer.component';
 import { AddanimalComponent } from './components/Animal/addanimal.component';
 import { AddvehiclesComponent } from './components/Vehicles/addvehicles.component';
@@ -48,7 +48,7 @@ import { HttpClientModule } from '@angular/common/http';
     TenantHeaderComponent,
     FormfieldsComponent,
     PropertywarefooterComponent,
-    AddapplicantComponent,
+    //AddapplicantComponent,
     AddemployerComponent,
     DynamictableComponent,
     AddanimalComponent,

@@ -9,20 +9,20 @@
           <label for="formGroupExampleInput">First Name</label>
           <input type="text" class="form-control" formControlName="firstName" [ngClass]="{'is-invalid':registerForm.get('firstName').invalid && registerForm.get('firstName').dirty ||  registerForm.get('firstName').invalid && shared.isNextClicked}">
           <div class="error-msg" *ngIf="registerForm.get('firstName').invalid && registerForm.get('firstName').dirty || registerForm.get('firstName').invalid && shared.isNextClicked">
-            *First Name is required
+            First Name is required
           </div>
           <label for="formGroupExampleInput">Last Name</label>
           <input type="text" class="form-control" formControlName="lastName" [ngClass]="{'is-invalid':registerForm.get('lastName').invalid && registerForm.get('lastName').dirty ||  registerForm.get('lastName').invalid && shared.isNextClicked}">
           <div class="error-msg" *ngIf="registerForm.get('lastName').invalid && registerForm.get('lastName').dirty || registerForm.get('lastName').invalid && shared.isNextClicked">
-            *Last Name is required
+            Last Name is required
           </div>
           <label for="formGroupExampleInput">Email</label>
           <input type="email" class="form-control" formControlName="Email" [ngClass]="{'is-invalid':registerForm.get('Email').invalid && registerForm.get('Email').dirty ||  registerForm.get('Email').invalid && shared.isNextClicked}">
           <div class="error-msg" *ngIf="registerForm.get('Email').errors?.required && registerForm.get('Email').dirty || registerForm.get('Email').errors?.required && shared.isNextClicked">
-            *Email is required
+            Email Address is required
           </div>
           <div class="error-msg" *ngIf="registerForm.get('Email').errors?.pattern && registerForm.get('Email').dirty || registerForm.get('Email').errors?.pattern && shared.isNextClicked">
-            *A Valid Email is required
+            Enter Valid Email Address
           </div>
         </div>
       </form>
